@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وضعية اليوم</title>
+    <style>
+        body {
+            background-color: #001f3f; /* اللون النيلي الغامق */
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #app {
+            background-color: #00264d;
+            border: 2px solid #005073;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #image-container {
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #005073;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #00688b;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <h1>وضعية اليوم</h1>
+    <div id="image-container">
+        <!-- سيتم عرض الصور هنا -->
+    </div>
+    <button onclick="showImages()">عرض جميع الصور</button>
+    <button onclick="showRandomImage()">عرض صورة عشوائية</button>
+
+    <script>
+        const images = [
+            "https://hips.hearstapps.com/hmg-prod/images/wh-sexposition-69-01-1633532100.png?resize=980:*",
+            "https://hips.hearstapps.com/hmg-prod/images/wmh07012019-sex-positions-face-off-1562099039.png?crop=1xw:1xh;center,top&resize=980:*",
+            "https://sexpositions.club/wp-content/uploads/2016/03/5_19_3.png",
+            "https://sexpositions.club/wp-content/uploads/2016/03/5_22.png",
+            "https://sexpositions.club/wp-content/uploads/2019/06/18_26.png",
+            "https://sexpositions.club/wp-content/uploads/2019/06/15_3.png",
+            "https://sexpositions.club/wp-content/uploads/2019/06/1_60_2.png",
+            "https://sexpositions.club/wp-content/uploads/2019/06/4_4_4.png",
+            "https://sexpositions.club/wp-content/uploads/2016/02/4_1_3.png",
+            "https://sexpositions.club/wp-content/uploads/2019/06/4_17_4.png",
+            "https://sexpositions.club/wp-content/uploads/2016/03/4_13_2.png",
+            "https://sexpositions.club/wp-content/uploads/2019/06/19_33.png",
+            "https://sexpositions.club/wp-content/uploads/2019/06/18_68.png",
+            "https://sexpositions.club/wp-content/uploads/2016/02/8_2.png",
+            "https://sexpositions.club/wp-content/uploads/2016/03/13_24_4.png",
+            "https://sexpositions.club/wp-content/uploads/2016/03/1_29.png",
+            "https://sexpositions.club/wp-content/uploads/2019/06/2_41_5.png",
+            "https://sexpositions.club/wp-content/uploads/2016/03/1_51_4.png",
+            "https://sexpositions.club/wp-content/uploads/2019/06/19_36.png",
+            "https://sexpositions.club/wp-content/uploads/2016/04/12_19.png",
+            "https://sexpositions.club/wp-content/uploads/2016/03/12_3.png",
+            "https://sexpositions.club/wp-content/uploads/2016/03/12_13_2.png",
+            "https://sexpositions.club/wp-content/uploads/2016/03/11_18.png",
+            "https://sexpositions.club/wp-content/uploads/2016/03/11_14_2.png"
+        ];
+
+        function showImages() {
+            const container = document.getElementById("image-container");
+            container.innerHTML = ""; // تفريغ المحتوى السابق
+
+            images.forEach(src => {
+                const img = document.createElement("img");
+                img.src = src;
+                container.appendChild(img);
+            });
+        }
+
+        function showRandomImage() {
+            const container = document.getElementById("image-container");
+            container.innerHTML = ""; // تفريغ المحتوى السابق
+
+            const randomIndex = Math.floor(Math.random() * images.length);
+            const img = document.createElement("img");
+            img.src = images[randomIndex];
+            container.appendChild(img);
+        }
+    </script>
+</div>
+
+</body>
+</html>
